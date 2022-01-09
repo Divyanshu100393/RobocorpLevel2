@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.1.2 (Python 3.7.5 on win32)" generated="20211218 13:04:52.305" rpa="false" schemaversion="2">
+<suite id="s1" name="Robot Interactive Console" source="c:\Users\dmishra6\.vscode\extensions\robocorp.robotframework-lsp-0.34.0\src\robotframework_ls\vendored\robotframework_interactive\robot_interactive_console.robot">
+<test id="s1-t1" name="Default Task/Test">
+<kw name="Interpreter Main Loop" library="MainLoop">
+<kw name="Element Should Be Present">
+<arg>//button[@class="btn btn-dark"]</arg>
+<msg timestamp="20211218 13:05:25.896" level="FAIL">No keyword with name 'Element Should Be Present' found.</msg>
+<status status="FAIL" starttime="20211218 13:05:25.896" endtime="20211218 13:05:25.896"/>
+</kw>
+<kw name="Does Page Contain Element">
+<arg>//button[@class="btn btn-dark"]</arg>
+<msg timestamp="20211218 13:06:34.007" level="FAIL">No keyword with name 'Does Page Contain Element' found.</msg>
+<status status="FAIL" starttime="20211218 13:06:34.007" endtime="20211218 13:06:34.007"/>
+</kw>
+<status status="PASS" starttime="20211218 13:04:52.399" endtime="20211218 13:08:35.700"/>
+</kw>
+<status status="PASS" starttime="20211218 13:04:52.398" endtime="20211218 13:08:35.701"/>
+</test>
+<status status="PASS" starttime="20211218 13:04:52.310" endtime="20211218 13:08:35.703"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Robot Interactive Console">Robot Interactive Console</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
