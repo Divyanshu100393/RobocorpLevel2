@@ -11,8 +11,7 @@ Library           RPA.Robocorp.Vault
 
 ***Variables***
 ${output_folder}    ${CURDIR}${/}RobotOutput
-${OrderURL}         https://robotsparebinindustries.com/#/robot-order
-${csvURL}           https://robotsparebinindustries.com/orders.csv
+
 
 #Define sequential Tasks
 *** Tasks ***
@@ -25,7 +24,7 @@ Download And Begin
     Download    ${URLs}[csvUrl]  overwrite=True
 
 
-#Foreach row in csv file complete order, take screenshot and 
+#Foreach row in csv file complete order, take screenshot and Create pdf
 Complete Order
     ${roboPrefix}=    Get The Robot Prefix
     #
@@ -37,13 +36,12 @@ Complete Order
             ${elementExist}=    Does Page Contain Element    //div[@class="alert alert-success"]
             Exit For Loop If    ${elementExist}
             END
-        Log    Exited inner loop
         Take Robot Screenshot    id:robot-preview-image    
         ${reciept_html}=    Extract HTML Content    id:receipt
         Create reciept PDF    ${reciept_html}    ${order}[Order number]    ${roboPrefix}
         Click Button    Order another robot
     END
-    log    Exited outer loop
+
 
 #Create ZIP from pdfs generated
 Create ZipFile And Release Resources
@@ -59,7 +57,6 @@ Directory Cleanup
 
 Get List of Orders from Csv
     ${table}=    Read Table From Csv    orders.csv    header=True
-    Log   Found columns: ${table.columns}
     [Return]    ${table}
 
 Fill Order Details
